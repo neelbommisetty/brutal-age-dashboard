@@ -64,6 +64,7 @@ export default class TableComponent extends Component {
           <Popup
             inverted
             position="bottom center"
+            key={i}
             trigger={
               <Table.Cell key={i}>
                 {value ? value.toLocaleString() : '-'}
