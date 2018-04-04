@@ -10,51 +10,71 @@ export default class UserSpeedupsComponent extends Component {
           <Card.Meta>Speedups Summary</Card.Meta>
           <Card.Description>
             <Feed>
-              <Feed.Event>
-                <Feed.Content>
-                  <Feed.Summary
-                    content={`You have ${this.calculateTimeString(
-                      this.props.speedups.Healing['Total Minutes']
-                    )} Healing Speedup `}
-                  />
-                </Feed.Content>
-              </Feed.Event>
-              <Feed.Event>
-                <Feed.Content>
-                  <Feed.Summary
-                    content={`You have ${this.calculateTimeString(
-                      this.props.speedups.Building['Total Minutes']
-                    )} Building Speedups `}
-                  />
-                </Feed.Content>
-              </Feed.Event>
-              <Feed.Event>
-                <Feed.Content>
-                  <Feed.Summary
-                    content={`You have ${this.calculateTimeString(
-                      this.props.speedups.Training['Total Minutes']
-                    )} Training Speedups `}
-                  />
-                </Feed.Content>
-              </Feed.Event>
-              <Feed.Event>
-                <Feed.Content>
-                  <Feed.Summary
-                    content={`You have ${this.calculateTimeString(
-                      this.props.speedups.Research['Total Minutes']
-                    )} Research Speedups `}
-                  />
-                </Feed.Content>
-              </Feed.Event>
-              <Feed.Event>
-                <Feed.Content>
-                  <Feed.Summary
-                    content={`You have ${this.calculateTimeString(
-                      this.props.speedups.All['Total Minutes']
-                    )} All Speedups `}
-                  />
-                </Feed.Content>
-              </Feed.Event>
+              {this.props.speedups.Healing ? (
+                <Feed.Event>
+                  <Feed.Content>
+                    <Feed.Summary
+                      content={`You have ${this.calculateTimeString(
+                        this.props.speedups.Healing['Total Minutes']
+                      )} Healing Speedup `}
+                    />
+                  </Feed.Content>
+                </Feed.Event>
+              ) : (
+                ''
+              )}
+              {this.props.speedups.Building ? (
+                <Feed.Event>
+                  <Feed.Content>
+                    <Feed.Summary
+                      content={`You have ${this.calculateTimeString(
+                        this.props.speedups.Building['Total Minutes']
+                      )} Building Speedups `}
+                    />
+                  </Feed.Content>
+                </Feed.Event>
+              ) : (
+                ''
+              )}
+              {this.props.speedups.Training ? (
+                <Feed.Event>
+                  <Feed.Content>
+                    <Feed.Summary
+                      content={`You have ${this.calculateTimeString(
+                        this.props.speedups.Training['Total Minutes']
+                      )} Training Speedups `}
+                    />
+                  </Feed.Content>
+                </Feed.Event>
+              ) : (
+                ''
+              )}
+              {this.props.speedups.Research ? (
+                <Feed.Event>
+                  <Feed.Content>
+                    <Feed.Summary
+                      content={`You have ${this.calculateTimeString(
+                        this.props.speedups.Research['Total Minutes']
+                      )} Research Speedups `}
+                    />
+                  </Feed.Content>
+                </Feed.Event>
+              ) : (
+                ''
+              )}
+              {this.props.speedups.All ? (
+                <Feed.Event>
+                  <Feed.Content>
+                    <Feed.Summary
+                      content={`You have ${this.calculateTimeString(
+                        this.props.speedups.All['Total Minutes']
+                      )} All Speedups `}
+                    />
+                  </Feed.Content>
+                </Feed.Event>
+              ) : (
+                ''
+              )}
             </Feed>
           </Card.Description>
         </Card.Content>

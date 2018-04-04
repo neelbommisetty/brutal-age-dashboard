@@ -26,7 +26,6 @@ export default class OverviewComponent extends Component {
   }
 
   render() {
-    console.log(this.state);
     return (
       <div>
         <UserFormComponent
