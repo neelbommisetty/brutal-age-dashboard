@@ -15,8 +15,8 @@ export default class OthersComponent extends Component {
             >
               Sean Barry
             </a>
-            &nbsp;Has a Very Good Guide About Partners And Strategies. Please
-            &nbsp;
+            &nbsp;has a very good guide about Partners System and Partner
+            Strategies.Please&nbsp;
             <a
               href="https://seanbarry007.wixsite.com/baguide"
               target="_blank"
@@ -28,6 +28,18 @@ export default class OthersComponent extends Component {
           </div>
         </Message>
         <Message>
+          <Message.Header>Brutal Scientist Blog</Message.Header>
+          This blog has some interesting tips about the game.&nbsp;
+          <a
+            href="http://brutalscientist.blogspot.in/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Click Here
+          </a>
+          &nbsp;to check out the blog.
+        </Message>
+        <Message>
           <Message.Header>Wiki</Message.Header>
           <a
             href="http://brutalage.wikia.com/wiki/Brutal_Age:_Horde_Invasion"
@@ -36,19 +48,7 @@ export default class OthersComponent extends Component {
           >
             Click Here
           </a>
-          &nbsp;to Check out the Wiki
-        </Message>
-        <Message>
-          <Message.Header>Brutal Scientist Blog</Message.Header>
-          <a
-            href="http://brutalscientist.blogspot.in/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Click Here
-          </a>
-          &nbsp;to Check out the Blog. It Has Some interesting tips about the
-          game.
+          &nbsp;to go the Wiki Page.
         </Message>
       </div>
     );
