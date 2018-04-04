@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import HeaderComponent from '../Components/Header.component';
 import ResourcesComponent from './Resources.component';
-import { Tab } from 'semantic-ui-react';
+import { Tab, Container } from 'semantic-ui-react';
 import SpeedupsComponent from './Speedups.component';
 
 export default class HomeComponent extends Component {
@@ -25,11 +25,10 @@ export default class HomeComponent extends Component {
       }
     ];
     return (
-      <div>
+      <Container>
         <HeaderComponent />
-        {/*  */}
         <Tab menu={{ secondary: true, pointing: true }} panes={panes} />
-      </div>
+      </Container>
     );
   }
 }

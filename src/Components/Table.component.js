@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
-import { Table, Input } from 'semantic-ui-react';
+import { Table, Input, Popup } from 'semantic-ui-react';
+var converter = require('number-to-words');
 
 export default class TableComponent extends Component {
   generateTableHeader() {
@@ -58,8 +59,20 @@ export default class TableComponent extends Component {
         this.props.data.values[col.name][den.name]
           ? this.props.data.values[col.name][den.name]
           : '0';
-      if (
-        den.name === 'Total' ||
+      if (den.name === 'Total') {
+        return (
+          <Popup
+            inverted
+            position="bottom center"
+            trigger={
+              <Table.Cell key={i}>
+                {value ? value.toLocaleString() : '-'}
+              </Table.Cell>
+            }
+            content={`${converter.toWords(value)} ${col.name}`}
+          />
+        );
+      } else if (
         den.name === 'Total Minutes' ||
         den.name === 'Total Hours' ||
         den.name === 'Total Days'
@@ -88,7 +101,7 @@ export default class TableComponent extends Component {
 
   generateTable() {
     return (
-      <Table celled padded>
+      <Table unstackable celled compact fixed>
         {this.generateTableHeader()}
         <Table.Body>{this.generateRows()}</Table.Body>
       </Table>
