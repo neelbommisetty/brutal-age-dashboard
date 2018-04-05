@@ -2,6 +2,14 @@ import React, { Component } from 'react';
 import { Form, Header } from 'semantic-ui-react';
 
 export default class UserFormComponent extends Component {
+  componentDidCatch(error, errorInfo) {
+    // this.setState({ error });
+    if (window.raven) {
+      window.Raven.captureException(error, {
+        extra: errorInfo
+      });
+    }
+  }
   constructor(props) {
     super(props);
     this.state = { username: props.username, server: props.server };

@@ -10,9 +10,7 @@ import {
 export default class ResourcesComponent extends Component {
   constructor(props) {
     super(props);
-    this.state = {
-      data: RESOURCES
-    };
+    this.state = { data: RESOURCES };
   }
 
   componentDidMount() {
@@ -20,6 +18,14 @@ export default class ResourcesComponent extends Component {
       this.state && this.state.data ? this.state.data : RESOURCES;
     resources.values = getDataFromLocalStorage('resources');
     this.setState({ data: RESOURCES });
+  }
+  componentDidCatch(error, errorInfo) {
+    // this.setState({ error });
+    if (window.raven) {
+      window.Raven.captureException(error, {
+        extra: errorInfo
+      });
+    }
   }
 
   render() {

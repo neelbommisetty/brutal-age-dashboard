@@ -2,6 +2,14 @@ import React, { Component } from 'react';
 import { Message } from 'semantic-ui-react';
 
 export default class OthersComponent extends Component {
+  componentDidCatch(error, errorInfo) {
+    // this.setState({ error });
+    if (window.raven) {
+      window.Raven.captureException(error, {
+        extra: errorInfo
+      });
+    }
+  }
   render() {
     return (
       <div>

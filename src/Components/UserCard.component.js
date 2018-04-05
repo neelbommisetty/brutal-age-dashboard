@@ -2,6 +2,14 @@ import React, { Component } from 'react';
 import { Feed, Card } from 'semantic-ui-react';
 
 export default class UserCardComponent extends Component {
+  componentDidCatch(error, errorInfo) {
+    // this.setState({ error });
+    if (window.raven) {
+      window.Raven.captureException(error, {
+        extra: errorInfo
+      });
+    }
+  }
   render() {
     return (
       <Card>

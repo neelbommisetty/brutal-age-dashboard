@@ -7,6 +7,15 @@ import OthersComponent from './Others.component';
 import OverviewComponent from './Overview.component';
 
 export default class HomeComponent extends Component {
+  componentDidCatch(error, errorInfo) {
+    // this.setState({ error });
+    if (window.raven) {
+      window.Raven.captureException(error, {
+        extra: errorInfo
+      });
+    }
+  }
+
   render() {
     const panes = [
       {

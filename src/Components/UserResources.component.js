@@ -2,6 +2,14 @@ import React, { Component } from 'react';
 import { Feed, Card } from 'semantic-ui-react';
 
 export default class UserResourcesComponent extends Component {
+  componentDidCatch(error, errorInfo) {
+    // this.setState({ error });
+    if (window.raven) {
+      window.Raven.captureException(error, {
+        extra: errorInfo
+      });
+    }
+  }
   render() {
     const resourcesContent = () => (
       <Card>

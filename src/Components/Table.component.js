@@ -3,6 +3,14 @@ import { Table, Input, Popup } from 'semantic-ui-react';
 var converter = require('number-to-words');
 
 export default class TableComponent extends Component {
+  componentDidCatch(error, errorInfo) {
+    // this.setState({ error });
+    if (window.raven) {
+      window.Raven.captureException(error, {
+        extra: errorInfo
+      });
+    }
+  }
   generateTableHeader() {
     const hCols = this.props.data.columns.map((col, i) => {
       return (
@@ -30,17 +38,23 @@ export default class TableComponent extends Component {
     } else {
       rows.push(
         <Table.Row key={2103}>
-          {this.generateRow({ name: 'Total Minutes' })}
+          {this.generateRow({
+            name: 'Total Minutes'
+          })}
         </Table.Row>
       );
       rows.push(
         <Table.Row key={2104}>
-          {this.generateRow({ name: 'Total Hours' })}
+          {this.generateRow({
+            name: 'Total Hours'
+          })}
         </Table.Row>
       );
       rows.push(
         <Table.Row key={2105}>
-          {this.generateRow({ name: 'Total Days' })}
+          {this.generateRow({
+            name: 'Total Days'
+          })}
         </Table.Row>
       );
     }

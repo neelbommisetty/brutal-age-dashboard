@@ -24,7 +24,20 @@ export default class OverviewComponent extends Component {
     const userData = getDataFromLocalStorage('user');
     const resources = getDataFromLocalStorage('resources');
     const speedups = getDataFromLocalStorage('speedups');
-    this.setState({ ...userData, resources, speedups });
+    this.setState({
+      ...userData,
+      resources,
+      speedups
+    });
+  }
+
+  componentDidCatch(error, errorInfo) {
+    // this.setState({ error });
+    if (window.raven) {
+      window.Raven.captureException(error, {
+        extra: errorInfo
+      });
+    }
   }
 
   render() {
