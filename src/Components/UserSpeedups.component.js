@@ -92,8 +92,8 @@ export default class UserSpeedupsComponent extends Component {
     const finalMins = minutes % 60;
     const finalDays = Math.floor(hours / 24);
     const finalHours = hours % 24;
-    return `${finalDays ? `${finalDays.toLocaleString()} days` : ''} ${
-      finalHours ? `${finalHours} hours` : ''
-    } ${finalMins ? `${finalMins} minutes` : ''}`;
+    return `${finalDays ? `${finalDays.toLocaleString()} day(s)` : ''} ${
+      finalHours ? `${finalHours} hour(s)` : ''
+    } ${finalMins ? `${finalMins} minute(s)` : ''}`;
   }
 }
