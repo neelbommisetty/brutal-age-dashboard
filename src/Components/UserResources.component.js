@@ -14,7 +14,11 @@ export default class UserResourcesComponent extends Component {
                 <Feed.Event>
                   <Feed.Content>
                     <Feed.Summary
-                      content={`You have ${this.props.resources.Wood.Total.toLocaleString()} Wood`}
+                      content={`You have ${
+                        this.props.resources.Wood.Total
+                          ? this.props.resources.Wood.Total.toLocaleString()
+                          : 0
+                      } Wood`}
                     />
                   </Feed.Content>
                 </Feed.Event>
@@ -25,7 +29,11 @@ export default class UserResourcesComponent extends Component {
                 <Feed.Event>
                   <Feed.Content>
                     <Feed.Summary
-                      content={`You have ${this.props.resources.Meat.Total.toLocaleString()} Meat`}
+                      content={`You have ${
+                        this.props.resources.Meat.Total
+                          ? this.props.resources.Meat.Total.toLocaleString()
+                          : 0
+                      } Meat`}
                     />
                   </Feed.Content>
                 </Feed.Event>
@@ -36,7 +44,11 @@ export default class UserResourcesComponent extends Component {
                 <Feed.Event>
                   <Feed.Content>
                     <Feed.Summary
-                      content={`You have ${this.props.resources.Mana.Total.toLocaleString()} Mana`}
+                      content={`You have ${
+                        this.props.resources.Mana.Total
+                          ? this.props.resources.Mana.Total.toLocaleString()
+                          : 0
+                      } Mana`}
                     />
                   </Feed.Content>
                 </Feed.Event>
@@ -47,7 +59,11 @@ export default class UserResourcesComponent extends Component {
                 <Feed.Event>
                   <Feed.Content>
                     <Feed.Summary
-                      content={`You have ${this.props.resources.Stone.Total.toLocaleString()} Stone`}
+                      content={`You have ${
+                        this.props.resources.Stone.Total
+                          ? this.props.resources.Stone.Total.toLocaleString()
+                          : 0
+                      } Stone`}
                     />
                   </Feed.Content>
                 </Feed.Event>
@@ -58,7 +74,11 @@ export default class UserResourcesComponent extends Component {
                 <Feed.Event>
                   <Feed.Content>
                     <Feed.Summary
-                      content={`You have ${this.props.resources.Ivory.Total.toLocaleString()} Ivory`}
+                      content={`You have ${
+                        this.props.resources.Ivory.Total
+                          ? this.props.resources.Ivory.Total.toLocaleString()
+                          : 0
+                      } Ivory`}
                     />
                   </Feed.Content>
                 </Feed.Event>
