@@ -16,7 +16,7 @@ export default class UserSpeedupsComponent extends Component {
                     <Feed.Summary
                       content={`You have ${this.calculateTimeString(
                         this.props.speedups.Healing['Total Minutes']
-                      )} Healing Speedup `}
+                      )} of Healing Speedup `}
                     />
                   </Feed.Content>
                 </Feed.Event>
@@ -29,7 +29,7 @@ export default class UserSpeedupsComponent extends Component {
                     <Feed.Summary
                       content={`You have ${this.calculateTimeString(
                         this.props.speedups.Building['Total Minutes']
-                      )} Building Speedups `}
+                      )} of  Building Speedups `}
                     />
                   </Feed.Content>
                 </Feed.Event>
@@ -42,7 +42,7 @@ export default class UserSpeedupsComponent extends Component {
                     <Feed.Summary
                       content={`You have ${this.calculateTimeString(
                         this.props.speedups.Training['Total Minutes']
-                      )} Training Speedups `}
+                      )} of Training Speedups `}
                     />
                   </Feed.Content>
                 </Feed.Event>
@@ -55,7 +55,7 @@ export default class UserSpeedupsComponent extends Component {
                     <Feed.Summary
                       content={`You have ${this.calculateTimeString(
                         this.props.speedups.Research['Total Minutes']
-                      )} Research Speedups `}
+                      )} of Research Speedups `}
                     />
                   </Feed.Content>
                 </Feed.Event>
@@ -68,7 +68,7 @@ export default class UserSpeedupsComponent extends Component {
                     <Feed.Summary
                       content={`You have ${this.calculateTimeString(
                         this.props.speedups.All['Total Minutes']
-                      )} All Speedups `}
+                      )} of All Speedups `}
                     />
                   </Feed.Content>
                 </Feed.Event>
@@ -86,11 +86,14 @@ export default class UserSpeedupsComponent extends Component {
       return '';
     }
   }
+
   calculateTimeString(minutes) {
     const hours = Math.floor(minutes / 60);
     const finalMins = minutes % 60;
     const finalDays = Math.floor(hours / 24);
     const finalHours = hours % 24;
-    return `${finalDays} Days ${finalHours} Hours ${finalMins} Minutes`;
+    return `${finalDays ? `${finalDays} days` : ''} ${
+      finalHours ? `${finalHours} hours` : ''
+    } ${finalMins ? `${finalMins} minutes` : ''}`;
   }
 }

@@ -3,6 +3,8 @@ import UserFormComponent from '../Components/UserForm.component';
 import UserCardComponent from '../Components/UserCard.component';
 import UserResourcesComponent from '../Components/UserResources.component';
 import UserSpeedupsComponent from '../Components/UserSpeedups.component';
+import ClanCoinsCardComponent from '../Components/ClanCoinsCard.component';
+import GemsCardComponent from '../Components/GemsCard.component';
 import { getDataFromLocalStorage, setDataToLocalStorage } from '../metadata';
 import { Card, Header } from 'semantic-ui-react';
 
@@ -33,11 +35,13 @@ export default class OverviewComponent extends Component {
           {...this.state}
         />
         <Header as="h1">User Summary </Header>
-        <Card.Group>
+        <Card.Group itemsPerRow={3}>
           <UserCardComponent {...this.state} />
           <UserResourcesComponent {...this.state} />
           <UserSpeedupsComponent {...this.state} />
         </Card.Group>
+        <ClanCoinsCardComponent {...this.state} />
+        <GemsCardComponent {...this.state} />
       </div>
     );
   }

@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import { Feed, Card } from 'semantic-ui-react';
-var converter = require('number-to-words');
 
 export default class UserResourcesComponent extends Component {
   render() {
@@ -15,9 +14,7 @@ export default class UserResourcesComponent extends Component {
                 <Feed.Event>
                   <Feed.Content>
                     <Feed.Summary
-                      content={`You have ${converter.toWords(
-                        this.props.resources.Wood.Total
-                      )} Wood`}
+                      content={`You have ${this.props.resources.Wood.Total.toLocaleString()} Wood`}
                     />
                   </Feed.Content>
                 </Feed.Event>
@@ -28,9 +25,7 @@ export default class UserResourcesComponent extends Component {
                 <Feed.Event>
                   <Feed.Content>
                     <Feed.Summary
-                      content={`You have ${converter.toWords(
-                        this.props.resources.Meat.Total
-                      )} Meat`}
+                      content={`You have ${this.props.resources.Meat.Total.toLocaleString()} Meat`}
                     />
                   </Feed.Content>
                 </Feed.Event>
@@ -41,9 +36,7 @@ export default class UserResourcesComponent extends Component {
                 <Feed.Event>
                   <Feed.Content>
                     <Feed.Summary
-                      content={`You have ${converter.toWords(
-                        this.props.resources.Mana.Total
-                      )} Mana`}
+                      content={`You have ${this.props.resources.Mana.Total.toLocaleString()} Mana`}
                     />
                   </Feed.Content>
                 </Feed.Event>
@@ -54,9 +47,7 @@ export default class UserResourcesComponent extends Component {
                 <Feed.Event>
                   <Feed.Content>
                     <Feed.Summary
-                      content={`You have ${converter.toWords(
-                        this.props.resources.Stone.Total
-                      )} Stone`}
+                      content={`You have ${this.props.resources.Stone.Total.toLocaleString()} Stone`}
                     />
                   </Feed.Content>
                 </Feed.Event>
@@ -67,9 +58,7 @@ export default class UserResourcesComponent extends Component {
                 <Feed.Event>
                   <Feed.Content>
                     <Feed.Summary
-                      content={`You have ${converter.toWords(
-                        this.props.resources.Ivory.Total
-                      )} Ivory`}
+                      content={`You have ${this.props.resources.Ivory.Total.toLocaleString()} Ivory`}
                     />
                   </Feed.Content>
                 </Feed.Event>

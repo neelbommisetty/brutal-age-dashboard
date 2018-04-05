@@ -1,4 +1,9 @@
-.heading {
-  margin: 20px 10px !important;
-  text-align: left;
+.heading,
+.clear-button {
+  margin: 20px 0 !important;
+}
+.navbar {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
 }
