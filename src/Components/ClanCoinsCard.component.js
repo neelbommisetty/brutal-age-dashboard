@@ -29,11 +29,14 @@ export default class ClanCoinsCardComponent extends Component {
           `You Can Buy  ${this.calculateTimeString(shields * 480)} of Shield`
         );
         events.push('Divider');
-        // const shields = Math.floor(clancoins / 100000);
-        events.push(`You Can Buy  ${shields} Friendly Teleport(s)`);
+        events.push(
+          `You Can Buy  ${shields.toLocaleString()} Friendly Teleport(s)`
+        );
         events.push('Divider');
         const aTps = Math.floor(clancoins / 300000);
-        events.push(`You Can Buy  ${aTps} Advanced Teleport(s)`);
+        events.push(
+          `You Can Buy  ${aTps.toLocaleString()} Advanced Teleport(s)`
+        );
         events.push('Divider');
         const hrs = Math.floor(clancoins / 200000);
         events.push(
@@ -80,7 +83,7 @@ export default class ClanCoinsCardComponent extends Component {
     const finalMins = minutes % 60;
     const finalDays = Math.floor(hours / 24);
     const finalHours = hours % 24;
-    return `${finalDays ? `${finalDays} day(s)` : ''} ${
+    return `${finalDays ? `${finalDays.toLocaleString()} day(s)` : ''} ${
       finalHours ? `${finalHours} hour(s)` : ''
     } ${finalMins ? `${finalMins} minute(s)` : ''}`;
   }

@@ -20,7 +20,7 @@ export default class GemsCardComponent extends Component {
         );
         events.push('Divider');
         const skullPiles = Math.floor(gems / 15);
-        events.push(`You can buy ${skullPiles} Skull Piles`);
+        events.push(`You can buy ${skullPiles.toLocaleString()} Skull Piles`);
       } else if (gems < 1000) {
         events.push('You can buy 1 Golden Magic Turtle');
         events.push('Divider');
@@ -39,15 +39,19 @@ export default class GemsCardComponent extends Component {
         );
         events.push('Divider');
         const skullPiles = Math.floor(gems / 15);
-        events.push(`You can buy ${skullPiles} Skull Piles`);
+        events.push(`You can buy ${skullPiles.toLocaleString()} Skull Piles`);
       } else if (gems < 1500) {
         const turtles = Math.floor(gems / 500);
-        events.push(`You can buy ${turtles} Golden Magic Turtles`);
+        events.push(
+          `You can buy ${turtles.toLocaleString()} Golden Magic Turtles`
+        );
         events.push('Divider');
-        events.push(`You can buy ${turtles} Friendly Teleports`);
+        events.push(
+          `You can buy ${turtles.toLocaleString()} Friendly Teleports`
+        );
         events.push('Divider');
         const sheild1 = Math.floor(gems / 1000);
-        events.push(`You can buy ${sheild1} day(s) of Shield`);
+        events.push(`You can buy ${sheild1.toLocaleString()} day(s) of Shield`);
         events.push('Divider');
         const hrs8 = Math.floor(gems / 650);
         events.push(
@@ -60,10 +64,14 @@ export default class GemsCardComponent extends Component {
         );
       } else if (gems < 2500) {
         const turtles = Math.floor(gems / 500);
-        events.push(`You can buy ${turtles} Golden Magic Turtles`);
+        events.push(
+          `You can buy ${turtles.toLocaleString()} Golden Magic Turtles`
+        );
         events.push('Divider');
         const aTps = Math.floor(gems / 1500);
-        events.push(`You can buy ${aTps} Advanced Teleport(s)`);
+        events.push(
+          `You can buy ${aTps.toLocaleString()} Advanced Teleport(s)`
+        );
         events.push('Divider');
         const consMaster = Math.floor(gems / 250);
         events.push(
@@ -71,27 +79,37 @@ export default class GemsCardComponent extends Component {
         );
         events.push('Divider');
         const sheild1 = Math.floor(gems / 1000);
-        events.push(`You can buy ${sheild1} day(s) of Shield`);
+        events.push(`You can buy ${sheild1.toLocaleString()} day(s) of Shield`);
         events.push('Divider');
         const day1 = Math.floor(gems / 1500);
-        events.push(`You can buy ${day1} day(s) of Speedup`);
+        events.push(`You can buy ${day1.toLocaleString()} day(s) of Speedup`);
       } else {
         const turtles = Math.floor(gems / 500);
-        events.push(`You can buy ${turtles} Golden Magic Turtles`);
+        events.push(
+          `You can buy ${turtles.toLocaleString()} Golden Magic Turtles`
+        );
         events.push('Divider');
         const day1 = Math.floor(gems / 1500);
-        events.push(`You can buy ${day1} day(s) of Speedup`);
+        events.push(`You can buy ${day1.toLocaleString()} day(s) of Speedup`);
         events.push('Divider');
         const sheild3 = Math.floor(gems / 2500);
-        events.push(`You can buy ${sheild3 * 3} days of Shield`);
+        events.push(
+          `You can buy ${(sheild3 * 3).toLocaleString()} days of Shield`
+        );
         events.push('Divider');
         if (gems > 3500) {
           const res = Math.floor(gems / 3300);
-          events.push(`You can buy ${res * 1.5} Million Wood/Stone/Ivory`);
+          events.push(
+            `You can buy ${(
+              res * 1.5
+            ).toLocaleString()} Million Wood/Stone/Ivory`
+          );
           events.push('Divider');
-          events.push(`You can buy ${res * 6} Million Meat`);
+          events.push(`You can buy ${(res * 6).toLocaleString()} Million Meat`);
           events.push('Divider');
-          events.push(`You can buy ${res * 600 / 1000} Million Mana`);
+          events.push(
+            `You can buy ${(res * 600 / 1000).toLocaleString()} Million Mana`
+          );
         } else {
           const consMaster = Math.floor(gems / 250);
           events.push(
@@ -100,7 +118,9 @@ export default class GemsCardComponent extends Component {
         }
         events.push('Divider');
         const aTps = Math.floor(gems / 1500);
-        events.push(`You can buy ${aTps} Advanced Teleport(s)`);
+        events.push(
+          `You can buy ${aTps.toLocaleString()} Advanced Teleport(s)`
+        );
       }
 
       return events.map((ev, i) => {
@@ -143,7 +163,7 @@ export default class GemsCardComponent extends Component {
     const finalMins = minutes % 60;
     const finalDays = Math.floor(hours / 24);
     const finalHours = hours % 24;
-    return `${finalDays ? `${finalDays} day(s)` : ''} ${
+    return `${finalDays ? `${finalDays.toLocaleString()} day(s)` : ''} ${
       finalHours ? `${finalHours} hour(s)` : ''
     } ${finalMins ? `${finalMins} minute(s)` : ''}`;
   }
