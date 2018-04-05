@@ -35,7 +35,7 @@ export default class OverviewComponent extends Component {
           {...this.state}
         />
         <Header as="h1">User Summary </Header>
-        <Card.Group itemsPerRow={3}>
+        <Card.Group itemsPerRow={3} stackable>
           <UserCardComponent {...this.state} />
           <UserResourcesComponent {...this.state} />
           <UserSpeedupsComponent {...this.state} />
