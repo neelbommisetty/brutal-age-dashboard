@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "firebase": "^4.12.1",
     "flow-bin": "^0.69.0",
     "husky": "^0.14.3",
     "lint-staged": "^7.0.2",

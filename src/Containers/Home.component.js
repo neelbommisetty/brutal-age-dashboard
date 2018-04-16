@@ -54,7 +54,16 @@ export default class HomeComponent extends Component {
     return (
       <Container>
         <HeaderComponent />
-        <Tab menu={{ secondary: true, pointing: true }} panes={panes} />
+        <Tab
+          menu={{
+            borderless: true,
+            attached: false,
+            tabular: false,
+            secondary: true
+          }}
+          grid={{ paneWidth: 12, tabWidth: 3 }}
+          panes={panes}
+        />
       </Container>
     );
   }

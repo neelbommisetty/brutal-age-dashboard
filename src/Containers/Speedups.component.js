@@ -6,7 +6,6 @@ import {
   getDataFromLocalStorage,
   setDataToLocalStorage
 } from '../metadata';
-import { windowWhen } from 'rxjs/operators';
 
 export default class SpeedupsComponent extends Component {
   constructor(props) {
