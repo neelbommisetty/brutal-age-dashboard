@@ -7,7 +7,7 @@ const cal = ical({
   prodId: { company: 'brutal age calculator', product: 'Event Calendar' }
 });
 
-const startDateString = '2018-04-29 00:00';
+const startDateString = '2018-04-29 09:30';
 
 const eventTypes = [
   {
@@ -75,7 +75,7 @@ const eventTypes = [
 eventTypes.map(evtype => {
   if (evtype.repeating) {
     const start = moment
-      .tz(startDateString, 'America/Chicago')
+      .tz(startDateString, 'Asia/Calcutta')
       .add(evtype.startTime.days, 'days')
       .add(evtype.startTime.hours, 'hours');
     const end = moment(start).add(evtype.duration, 'minutes');
