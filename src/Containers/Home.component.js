@@ -5,7 +5,7 @@ import { Tab, Container } from 'semantic-ui-react';
 import SpeedupsComponent from './Speedups.component';
 import OthersComponent from './Others.component';
 import OverviewComponent from './Overview.component';
-// import EventsComponent from './Events.Component';
+import EventsComponent from './Events.Component';
 import './home.css';
 
 export default class HomeComponent extends Component {
@@ -28,14 +28,14 @@ export default class HomeComponent extends Component {
           </Tab.Pane>
         )
       },
-      // {
-      //   menuItem: 'Events Calendar',
-      //   render: () => (
-      //     <Tab.Pane>
-      //       <EventsComponent />
-      //     </Tab.Pane>
-      //   ),
-      // },
+      {
+        menuItem: 'Events Calendar',
+        render: () => (
+          <Tab.Pane>
+            <EventsComponent />
+          </Tab.Pane>
+        )
+      },
       {
         menuItem: 'Resources',
         render: () => (
