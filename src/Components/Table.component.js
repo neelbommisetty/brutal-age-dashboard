@@ -73,6 +73,17 @@ export default class TableComponent extends Component {
         this.props.data.values[col.name][den.name]
           ? this.props.data.values[col.name][den.name]
           : '0';
+      let wordValue;
+      try {
+        wordValue = converter.toWords(value);
+      } catch (e) {
+        if (window.Raven) {
+          window.Raven.captureException(e, {
+            extra: e
+          });
+        }
+        wordValue = value.toLocaleString();
+      }
       if (den.name === 'Total') {
         return (
           <Popup
@@ -84,7 +95,7 @@ export default class TableComponent extends Component {
                 {value ? value.toLocaleString() : '-'}
               </Table.Cell>
             }
-            content={`${converter.toWords(value)} ${col.name}`}
+            content={`${wordValue} ${col.name}`}
           />
         );
       } else if (
@@ -116,7 +127,7 @@ export default class TableComponent extends Component {
 
   generateTable() {
     return (
-      <Table unstackable celled compact fixed>
+      <Table unstackable celled padded>
         {this.generateTableHeader()}
         <Table.Body>{this.generateRows()}</Table.Body>
       </Table>
@@ -124,6 +135,6 @@ export default class TableComponent extends Component {
   }
 
   render() {
-    return <div>{this.generateTable()}</div>;
+    return <div style={{ overflowX: 'scroll' }}>{this.generateTable()}</div>;
   }
 }
