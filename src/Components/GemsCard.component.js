@@ -36,9 +36,7 @@ export default class GemsCardComponent extends Component {
         events.push('Divider');
         const sheild8 = Math.floor(gems / 500);
         events.push(
-          `You Can Buy ${this.this.calculateTimeString(
-            sheild8 * 480
-          )} of Shields`
+          `You Can Buy ${this.calculateTimeString(sheild8 * 480)} of Shields`
         );
         events.push('Divider');
         const consMaster = Math.floor(gems / 250);
