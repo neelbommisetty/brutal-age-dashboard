@@ -8,7 +8,7 @@
     "husky": "^0.14.3",
     "ical-generator": "^0.2.10",
     "lint-staged": "^7.0.2",
-    "moment-timezone": "^0.5.16",
+    "moment-timezone": "^0.5.35",
     "number-to-words": "^1.2.3",
     "prettier": "^1.11.1",
     "react": "^16.3.0",
